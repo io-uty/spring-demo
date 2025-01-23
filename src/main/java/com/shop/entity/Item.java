@@ -20,12 +20,9 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id; //상품코드
 
+    @Setter
     @Column(nullable = false, length = 50)
     private String itemNm; //상품명
-
-    public void setItemNm(String itemNm) {
-        this.itemNm = itemNm;
-    }
 
     @Column(name="price", nullable = false)
     private int price; //가격
