@@ -1,17 +1,12 @@
 package com.shop.controller;
 
 import com.shop.dto.ItemDto;
-import org.hibernate.boot.jaxb.mapping.marshall.InheritanceTypeMarshalling;
-import org.springframework.cglib.core.Local;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,7 +28,7 @@ public class ThymeleafExController {
         itemDto.setRegTime(LocalDateTime.now());
 
         model.addAttribute("itemDto", itemDto);
-        return "thymeleafEx/thymeleafEx02";
+        return "templates/thymeleafEx/thymeleafEx02";
     }
 
     @GetMapping(value="/ex03")
@@ -51,7 +46,7 @@ public class ThymeleafExController {
         }
 
         model.addAttribute("itemDtoList", itemDtoList);
-        return "thymeleafEx/thymeleafEx03";
+        return "templates/thymeleafEx/thymeleafEx03";
 
     }
 
@@ -69,6 +64,22 @@ public class ThymeleafExController {
         }
 
         model.addAttribute("itemDtoList", itemDtoList);
-        return "thymeleafEx/thymeleafEx04";
+        return "templates/thymeleafEx/thymeleafEx04";
+    }
+
+    @GetMapping(value="/ex05")
+    public String thymeleafExample05(){
+        return "thymeleafEx/thymeleafEx05";
+    }
+
+    @GetMapping(value="/ex06")
+    public String thymeleafExample06(String param1, String param2, Model model){
+        model.addAttribute("param1", param1);
+        model.addAttribute("param2", param2);
+        return "thymeleafEx/thymeleafEx06";
+    }
+    @GetMapping(value="/ex07")
+    public String thymeleafExample07(){
+        return "thymeleafEx/thymeleafEx07";
     }
 }

@@ -23,6 +23,10 @@ public class Item {
     @Column(nullable = false, length = 50)
     private String itemNm; //상품명
 
+    public void setItemNm(String itemNm) {
+        this.itemNm = itemNm;
+    }
+
     @Column(name="price", nullable = false)
     private int price; //가격
 
