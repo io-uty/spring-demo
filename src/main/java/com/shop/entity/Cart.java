@@ -15,7 +15,7 @@ public class Cart {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToOne //일대일 단방향 매핑
+    @OneToOne(fetch = FetchType.LAZY)//일대일 단방향 매핑
     @JoinColumn(name="member_id")
     private Member member;
 }
